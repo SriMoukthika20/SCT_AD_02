@@ -1,0 +1,52 @@
+import gradio as gr
+
+tasks = []
+
+def add_task(task):
+    tasks.append(task)
+    return "\n".join(tasks)
+
+def delete_task(task_index):
+    try:
+        index = int(task_index)
+        if 0 <= index < len(tasks):
+            del tasks[index]
+        else:
+            return "Error: Invalid task index."
+    except ValueError:
+        return "Error: Please enter a valid task index."
+    return "\n".join(tasks)
+
+def edit_task(task_index, new_task):
+    try:
+        index = int(task_index)
+        if 0 <= index < len(tasks):
+            tasks[index] = new_task
+        else:
+            return "Error: Invalid task index."
+    except ValueError:
+        return "Error: Please enter a valid task index."
+    return "\n".join(tasks)
+
+
+with gr.Blocks() as demo:
+    gr.Markdown("## 📝 To-Do List App")
+    with gr.Row():
+        task_input = gr.Textbox(label="Enter Task")
+        add_button = gr.Button("Add Task")
+    with gr.Row():
+        delete_index = gr.Textbox(label="Enter Task Index to Delete")
+        delete_button = gr.Button("Delete Task")
+    with gr.Row():
+        edit_index = gr.Textbox(label="Enter Task Index to Edit")
+        edit_input = gr.Textbox(label="Enter New Task")
+        edit_button = gr.Button("Edit Task")
+
+    output = gr.Textbox(label="Task List")
+
+    add_button.click(add_task, task_input, output)
+    delete_button.click(delete_task, delete_index, output)
+    edit_button.click(edit_task, [edit_index, edit_input], output)
+
+
+demo.launch()
