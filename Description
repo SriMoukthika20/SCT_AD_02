@@ -1,0 +1,19 @@
+Project Description
+
+This project is a simple yet effective To-Do List application built with modern web technologies. It allows users to create, manage, and organize their daily tasks efficiently. The app provides essential features such as adding new tasks, marking tasks as complete or incomplete, and resetting or removing tasks when needed.
+
+The user interface is clean, minimal, and responsive, making it easy to use across devices. The project is designed to be lightweight, beginner-friendly, and easily extendable, serving as both a practical productivity tool and a learning resource for developers.
+
+Key Highlights
+
+Add, edit, and delete tasks with ease
+
+Mark tasks as completed and uncheck them if needed
+
+Clear and intuitive interface for smooth task management
+
+Responsive design for usability across desktops and mobile devices
+
+Easy to customize and extend with additional features like due dates, reminders, or file uploads
+
+This To-Do List app is ideal for students, professionals, or anyone looking for a simple solution to manage tasks. It also serves as a solid starter project for developers interested in learning React, JavaScript, Python (backend), or database integration for full-stack applications.
